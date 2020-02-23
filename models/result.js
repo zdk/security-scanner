@@ -6,19 +6,19 @@ module.exports = (sequelize, type) => {
       autoIncrement: true,
     },
     status: type.STRING,
-    repository_name: type.STRING,
+    repositoryName: type.STRING,
     findings: type.STRING,
-    queue_at: {
+    queuedAt: {
       type: 'TIMESTAMP',
       defaultValue: type.NOW,
       allowNull: false,
     },
-    scanning_at: {
+    scanningAt: {
       type: 'TIMESTAMP',
       defaultValue: type.NOW,
       allowNull: false,
     },
-    finished_at: {
+    finisheAt: {
       type: 'TIMESTAMP',
       defaultValue: type.NOW,
       allowNull: false,

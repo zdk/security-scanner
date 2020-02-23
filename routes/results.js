@@ -4,8 +4,6 @@ const router = express.Router();
 
 const { index } = require('../controllers/result');
 
-router
-  .route('/results')
-  .get(index);
+router.get('/', index);
 
 module.exports = router;

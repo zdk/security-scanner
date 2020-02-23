@@ -20,7 +20,7 @@ describe('Result API', () => {
   });
   describe('GET /results', () => {
     it('Getting all results', (done) => {
-      chai.request(app).get('/results').end(function(err, res){
+      chai.request(app).get('/').end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('array');
         done();

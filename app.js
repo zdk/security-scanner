@@ -10,7 +10,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Routes
-const results = require('./routes/results');
+const routes = require('./routes');
+
+// DB
+const db = require('./db');
+
+// Register routes
+app.use(...routes);
 
 app.listen(port, () => {
   /* eslint-disable no-console */
