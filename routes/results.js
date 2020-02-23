@@ -2,8 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const { index } = require('../controllers/result');
+const { index, create } = require('../controllers/result');
 
 router.get('/', index);
+router.post('/', create);
 
 module.exports = router;
