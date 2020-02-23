@@ -59,4 +59,13 @@ describe('Result API', () => {
         });
       });
   });
+
+
+  it('Get result by not existed id', function(done){
+      chai.request(app).get('/111').end(function(err, res){
+          res.should.have.status(404);
+          res.body.should.equal('Not found');
+          done();
+      })
+  });
 });
