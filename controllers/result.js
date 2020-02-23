@@ -64,13 +64,13 @@ function create(req, resp) {
 }
 
 function show(req, resp) {
-    Result.findByPk(req.params.id).then(result => {
-        if (result) {
-          resp.status(200).json(result);
-        } else {
-          resp.status(404).json('Not found');
-        }
-    });
+  Result.findByPk(req.params.id).then((result) => {
+    if (result) {
+      resp.status(200).json(result);
+    } else {
+      resp.status(404).json('Not found');
+    }
+  });
 }
 
 module.exports = {
