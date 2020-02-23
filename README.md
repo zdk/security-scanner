@@ -2,7 +2,7 @@
 
 Implement a RESTful API to CRUD a Security Scan Result (“Result”).
 
-## Result
+## The Result Object
 
     Id: any type of unique id
     Status: "Queued" | "In Progress" | "Success" | "Failure"
@@ -15,6 +15,7 @@ Implement a RESTful API to CRUD a Security Scan Result (“Result”).
 ## Prerequisite
 
  * [Node.js](https://nodejs.org/en/download/)
+ * [NPM](https://www.npmjs.com/get-npm)
 
 ## How to run
 
@@ -33,7 +34,7 @@ npm start
 
 ## Tests
 
-Execute
+Execute the following conmand:
 
 ```
 npm run test
@@ -80,16 +81,26 @@ npm run lint:fix
 
  - **/** :
     - Method: **POST**
-      - Description: Create a new scan.
+      - Description: Create a new scan result
       - Body: repositoryName
+
+ - **/** :
 
     - Method: **GET*
-      - Description: Return a result data.
+      - Description: Return all scan result data
+
+ - **/{id}** :
+
+    - Method: **GET*
+      - Description: Return a scan result data
+
+ - **/{id}** :
 
     - Method: **UPDATE**
-      - Description: Update the user's fields.
+      - Description: Update the given scan result fields
       - Body: repositoryName
 
+ - **/{id}** :
+
     - Method: **DELETE**
-      - Description: Delete a given scan result.
-      - Query String: result
+      - Description: Delete a given scan result
