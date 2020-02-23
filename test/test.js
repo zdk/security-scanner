@@ -84,4 +84,19 @@ describe('Result API', () => {
       });
     });
   });
+
+
+  describe('DELETE /:id results', () => {
+    it('Delete result by id', (done) => {
+      Result.create({
+        repositoryName: 'https://github.com/nodejs/node',
+      }).then((result) => {
+        chai.request(app).delete(result.id).end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.equal(1);
+          done();
+        });
+      });
+    });
+  });
 });
