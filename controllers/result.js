@@ -11,7 +11,6 @@ function index(req, resp) {
   });
 }
 
-
 function create(req, resp) {
   const {
     repositoryName,
