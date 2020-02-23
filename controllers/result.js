@@ -63,7 +63,14 @@ function create(req, resp) {
   });
 }
 
+function show(req, resp) {
+    Result.findByPk(req.params.id).then(result => {
+        resp.status(200).json(result);
+    });
+}
+
 module.exports = {
   index,
   create,
+  show,
 };
