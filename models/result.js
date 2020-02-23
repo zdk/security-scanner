@@ -7,7 +7,7 @@ module.exports = (sequelize, type) => {
     },
     status: type.STRING,
     repositoryName: type.STRING,
-    findings: type.STRING,
+    findings: type.JSONB,
     queuedAt: {
       type: 'TIMESTAMP',
       defaultValue: type.NOW,

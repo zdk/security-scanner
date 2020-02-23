@@ -18,7 +18,7 @@ describe('Result API', () => {
     });
     done();
   });
-  describe('GET /results', () => {
+  describe('GET /', () => {
     it('Getting all results', (done) => {
       chai.request(app).get('/').end((err, res) => {
         res.should.have.status(200);
