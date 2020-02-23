@@ -45,4 +45,18 @@ describe('Result API', () => {
       });
     });
   });
+
+  describe('GET /:id', function(){
+      it('Get result by id', function(done){
+        Result.create({
+          repositoryName: 'https://github.com/nodejs/node',
+        }).then(function(result){
+            chai.request(app).get('/'+result.id).end(function(err, res){
+              res.should.have.status(200);
+              res.body.should.be.a('object');
+              done();
+            });
+        });
+      });
+  });
 });
