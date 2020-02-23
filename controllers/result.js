@@ -72,6 +72,7 @@ function show(req, resp) {
     }
   });
 }
+
 function update(req, resp) {
   Result.update({
     repositoryNamep: req.body.repositoryName,
@@ -82,9 +83,18 @@ function update(req, resp) {
   });
 }
 
+function destroy(req, resp) {
+  Result.destroy({
+      where: { id: req.params.id }
+  }).then(result => {
+      resp.status(200).json(result);
+  });
+}
+
 module.exports = {
   index,
   create,
   show,
   update,
+  destroy,
 };
