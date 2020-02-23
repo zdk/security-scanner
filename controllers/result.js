@@ -85,9 +85,9 @@ function update(req, resp) {
 
 function destroy(req, resp) {
   Result.destroy({
-      where: { id: req.params.id }
-  }).then(result => {
-      resp.status(200).json(result);
+    where: { id: req.params.id },
+  }).then((result) => {
+    resp.status(200).json(result);
   });
 }
 
