@@ -86,12 +86,12 @@ npm run lint:fix
 
  - **/** :
 
-    - Method: **GET*
+    - Method: **GET**
       - Description: Return all scan result data
 
  - **/{id}** :
 
-    - Method: **GET*
+    - Method: **GET**
       - Description: Return a scan result data
 
  - **/{id}** :
