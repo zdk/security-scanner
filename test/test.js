@@ -67,4 +67,21 @@ describe('Result API', () => {
       });
     });
   });
+
+  describe('PUT /:id results', () => {
+    it('Update result by id', (done) => {
+      Result.create({
+        repositoryName: 'https://github.com/nodejs/node',
+      }).then((result) => {
+        const resultEdit = {
+          repositoryName: 'git@github.com:nodejs/node',
+        };
+        chai.request(app).put(`/results/${result.id}`).send(resultEdit).end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('array');
+          done();
+        });
+      });
+    });
+  });
 });
