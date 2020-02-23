@@ -72,9 +72,19 @@ function show(req, resp) {
     }
   });
 }
+function update(req, resp) {
+  Result.update({
+    repositoryNamep: req.body.repositoryName,
+  }, {
+    where: { id: req.params.id },
+  }).then((result) => {
+    resp.status(200).json(result);
+  });
+}
 
 module.exports = {
   index,
   create,
   show,
+  update,
 };

@@ -76,7 +76,7 @@ describe('Result API', () => {
         const resultEdit = {
           repositoryName: 'git@github.com:nodejs/node',
         };
-        chai.request(app).put(`/results/${result.id}`).send(resultEdit).end((err, res) => {
+        chai.request(app).put(`/${result.id}`).send(resultEdit).end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('array');
           done();
